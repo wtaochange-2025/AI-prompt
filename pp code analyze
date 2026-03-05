@@ -1,0 +1,53 @@
+claude AI: analyze the code
+
+Project Analysis
+This is a Django-based VoIP/Telecommunications Management Platform with FreeSWITCH integration. Here's a comprehensive overview:
+
+Core Purpose
+Call Data Record (CDR) management and billing system for VoIP operations
+Multi-tenant platform supporting businesses, clients, providers, and routing
+Real-time call routing, trunk group management, and monitoring
+Architecture
+Database:
+
+PostgreSQL backend with two databases:
+ppdev: Main application database
+ppcdr: Dedicated CDR (call records) database
+Custom models for high-volume call tracking
+Main Components:
+
+pp - Django web application
+arch - Shared application models and utilities
+fs - FreeSWITCH integration layer
+Key Modules
+Module	Purpose
+account/	User authentication, login/logout, help system
+cdr/	Call detail records, billing analysis
+routing/	Call routing, trunk groups, gateway management
+business/	Business entity management
+switch/	FreeSWITCH server management
+e911/	Emergency services integration
+graph/	Analytics and performance visualization
+sms/	SMS messaging
+chat/	Chat functionality
+accounting/	Financial tracking and reporting
+django_countries/	Country/region management
+Workflow System
+Multi-step workflow (Workflow1) for client setup: Client → Group → Gateway → DIDs
+Guided setup process with form validation
+Infrastructure Features
+Server management scripts (start, stop, restart, status, logs)
+Development server runs on 0.0.0.0:8000
+Monitoring/ping system in ping for health checks
+Real-time process monitoring with daemon support
+Data Model Highlights
+CDRs with financial tracking (currency fields, billing seconds)
+Multi-level hierarchy: Client → Trunk Groups → DIDs (Direct Inward Dials)
+Gateway management for provider connections
+Historical logging and audit trails
+Deployment
+Development environment with Django manage.py
+Shell scripts for server lifecycle management
+Log rotation and monitoring capabilities
+Cron-based maintenance (cronminute.sh)
+This platform manages the complete lifecycle of VoIP calls for businesses—from intake through billing—with multi-tenant support and comprehensive reporting.
