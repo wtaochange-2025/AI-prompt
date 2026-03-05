@@ -1,2 +1,15 @@
 NoReverseMatch at /account/dashboard/
 Reverse for 'pp.lookups.views.lookupDID' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+
+
+Issue identified: The templates are using pp.lookups.views.lookupDID as the URL name, but the urls.py doesn't define a name parameter for that URL pattern.
+
+The URL pattern in urls.py is:
+
+It should either be named, or the template references should match the actual pattern. The templates are using the full Python path notation which requires named URLs. Let me fix the URLs:
+
+Edited
+urls.py+1-1
+Fixed. The issue was that the URL pattern for lookupDID wasn't named. The templates reference it as pp.lookups.views.lookupDID using Django's URL reversing syntax, but the pattern lacked a name parameter. I added the name to match what the templates expect.
+
+The error should now be resolved when you access the dashboard or any page that links to the lookups.
