@@ -20,3 +20,38 @@ Media file serving - Added a URL pattern to serve static media files during deve
 Now the logo at /media/e911/default/logo.png will be properly served. The file itself was valid (4187 bytes, valid PNG image), but the Django URLs weren't configured to handle the media path.
 
 Test it by accessing: http://localhost:8000/media/e911/default/logo.png
+
+
+restart django
+
+ Run bash command?
+Allow
+Skip
+
+root      232113  1.4  1.9 2320576 76572 ?       Sl    2025 1472:13 /usr/bin/python2 manage.py runserver 0.0.0.0:8000
+
+root@ubuntu:~/pp# kill -9 232113
+root@ubuntu:~/pp# vi start_server.sh
+root@ubuntu:~/pp# telnet localhost 8000
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+root@ubuntu:~/pp# ./start_server.sh
+=== Django Development Server - Startup ===
+
+Starting Django development server...
+  Project: /root/pp/pp
+  Address: 0.0.0.0:8000
+  Log file: /tmp/django_server.log
+
+✓ Server started successfully!
+
+  PID: 887548
+  URL: http://localhost:8000/
+  Admin: http://localhost:8000/admin/
+
+Commands:
+  Stop server:  ./stop_server.sh
+  View logs:    ./view_logs.sh
+  Check status: ./status_server.sh
+
+
