@@ -14,9 +14,17 @@ Fixed. The issue was that the URL pattern for lookupDID wasn't named. The templa
 
 The error should now be resolved when you access the dashboard or any page that links to the lookups.
 
+    # DID Lookups
+    (r'main/$', 'lookups.views.lookupDID', {'name': 'pp.lookups.views.lookupDID'}),
+
 ================== after name is added, the issue not fix  ==================
 
 I used incorrect syntax. The name parameter needs to be passed as a keyword argument using the url() function, not as a dict. Let me fix it properly:
+
+after:
+
+    # DID Lookups
+    url(r'main/$', 'lookups.views.lookupDID', name='pp.lookups.views.lookupDID'),
 
 Edited
 urls.py+5-5
