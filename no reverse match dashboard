@@ -13,3 +13,11 @@ urls.py+1-1
 Fixed. The issue was that the URL pattern for lookupDID wasn't named. The templates reference it as pp.lookups.views.lookupDID using Django's URL reversing syntax, but the pattern lacked a name parameter. I added the name to match what the templates expect.
 
 The error should now be resolved when you access the dashboard or any page that links to the lookups.
+
+after name is added, the issue not fix
+
+I used incorrect syntax. The name parameter needs to be passed as a keyword argument using the url() function, not as a dict. Let me fix it properly:
+
+Edited
+urls.py+5-5
+Fixed. I changed from the tuple syntax to using the url() function with proper name parameters. The name keyword argument is the correct way to name URL patterns in Django.
