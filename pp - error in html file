@@ -1,0 +1,3 @@
+In template /root/pp/pp/templates/base/navigation.html, error at line 36
+
+Reverse for 'pp.logs.views.consoleLogs' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
