@@ -54,4 +54,6 @@ Commands:
   View logs:    ./view_logs.sh
   Check status: ./status_server.sh
 
+fix with following url:
+http://pp.wuyifan.com:8000/login/?next=/
 
