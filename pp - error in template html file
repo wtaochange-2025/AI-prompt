@@ -29,3 +29,6 @@ Edited
 urls.py+1-1
 Fixed. Added the name createQuickCompany to the URL pattern in business/urls.py. The template can now reverse this URL properly.
 
+
+    url(r'company/create/quick/$', 'createQuickCompany', name='createQuickCompany'),
+
