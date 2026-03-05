@@ -27,7 +27,17 @@ The URL pattern exists but doesn't have a name. Let me add it:
 
 Edited
 urls.py+1-1
-Fixed. Added the name createQuickCompany to the URL pattern in business/urls.py. The template can now reverse this URL properly.
+Fixed. Added the name createQuickCompany to the URL pattern in business/urls.py. 
+The template can now reverse this URL properly.
+
+after change, still get same error
+
+The name was added correctly. The issue is that business.urls is included with (r'^business/', include('business.urls')) using the old tuple syntax instead of url(). In Django, when using tuple syntax for includes, URL names from the included URLconf are registered directly. But since other patterns in urls.py have names that work, the name should be available.
+
+However, looking at the include statement - it's using tuple syntax while other patterns use url(). Let me check if that's causing issues. Also, I need to restart Django for changes to take effect. Let me verify the server was restarted:
+
+ Run bash command?
+
 
 
     url(r'company/create/quick/$', 'createQuickCompany', name='createQuickCompany'),
