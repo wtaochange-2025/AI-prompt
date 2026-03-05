@@ -10,3 +10,22 @@ after:
 
       <a href="{% url "pp.logs.views.consoleLogs" %}" class="console_logs">CLogs</a>
 
+In template /root/pp/pp/templates/account/portal_dashboard.html, error at line 62, 
+Reverse for 'createQuickCompany' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: [],
+fix
+
+
+62								<a href="{% url "createQuickCompany" %}"><img title="Add Quick Company" src="{{ MEDIA_URL }}e911/img/icons/add_many.png"/></a>
+
+createQuickCompany is not defined in account/urls.py. Let me search for where it might be defined:
+
+Found it! The view exists in urls.py but isn't named. Let me check and fix it:
+
+urls.py
+
+The URL pattern exists but doesn't have a name. Let me add it:
+
+Edited
+urls.py+1-1
+Fixed. Added the name createQuickCompany to the URL pattern in business/urls.py. The template can now reverse this URL properly.
+
