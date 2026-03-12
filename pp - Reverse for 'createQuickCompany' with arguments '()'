@@ -1,0 +1,7 @@
+/root/pp/pp/templates/account/portal_dashboard.html, error at line 62, Reverse for 'createQuickCompany' with arguments '()' and keyword arguments '{}' not found
+
+The issue is that the template is using {% url "createQuickCompany" %} but since the business.urls are included under the ^business/ prefix, the URL name needs to be referenced with the full view path.
+
+I'll fix this by updating the template to use the correct URL reference:
+
+Fixed! I've updated the template to use the full view path {% url "business.views.createQuickCompany" %} instead of just {% url "createQuickCompany" %}. This matches the pattern used elsewhere in the template (like account.views.dashboardLiveCount) and properly resolves the URL reference since the business URLs are included under the ^business/ prefix.
