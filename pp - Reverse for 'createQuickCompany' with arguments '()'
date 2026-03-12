@@ -25,3 +25,14 @@ not work:
 
 work:
  <a href="/business/company/graphs/{{ p.provider.shortname }}/">
+
+
+file: /root/pp/pp/templates/business/companies.html line 125, change url line with error, with satic link, then it works
+
+                        <td width="5%">
+                          <a href="/history/company/{{ client.shortname }}/"><img title="History" src="{{ MEDIA_URL }}e911/img/icons/view_history.png"/></a>&nbsp;
+                          <a href="/business/company/graphs_ppl2/{{ client.shortname }}/"><img title="Show Graphs" src="{{ MEDIA_URL }}e911/img/icons/graph.png"/></a>&nbsp;
+                          <a href="{% url "companyDetails" client.shortname %}"><img title="Details" src="{{ MEDIA_URL }}e911/img/icons/details.png"/></a>&nbsp;
+                          <a href="/business/company/update/{{ client.shortname }}"><img title="Edit" src="{{ MEDIA_URL }}e911/img/icons/edit.png"/></a>
+
+
