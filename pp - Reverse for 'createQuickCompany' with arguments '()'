@@ -4,4 +4,13 @@ The issue is that the template is using {% url "createQuickCompany" %} but since
 
 I'll fix this by updating the template to use the correct URL reference:
 
-Fixed! I've updated the template to use the full view path {% url "business.views.createQuickCompany" %} instead of just {% url "createQuickCompany" %}. This matches the pattern used elsewhere in the template (like account.views.dashboardLiveCount) and properly resolves the URL reference since the business URLs are included under the ^business/ prefix.
+Fixed! I've updated the template to use the full view path {% url "business.views.createQuickCompany" %} 
+instead of just {% url "createQuickCompany" %}. 
+This matches the pattern used elsewhere in the template (like account.views.dashboardLiveCount) 
+and properly resolves the URL reference since the business URLs are included under the ^business/ prefix.
+
+the above solution doesn't work, the following works, from Doug box
+
+<a href="/business/company/create/quick/"><img title="Add Quick Company" src="{{ MEDIA_URL }}e911/img/icons/add_many.png"/></a>
+
+
