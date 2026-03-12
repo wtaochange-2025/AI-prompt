@@ -36,3 +36,13 @@ file: /root/pp/pp/templates/business/companies.html line 125, change url line wi
                           <a href="/business/company/update/{{ client.shortname }}"><img title="Edit" src="{{ MEDIA_URL }}e911/img/icons/edit.png"/></a>
 
 
+########################  general fix ##############################
+
+/root/pp/pp/templates/business/company_details.html, error at line 209, replace url pattern with static url, such as href="/business/company/update/{{ client.shortname }}
+
+Done! I've replaced the URL pattern at line 209 from {% url "updateCompany" client.shortname %} to the static URL /business/company/update/{{ client.shortname }}.
+
+/root/pp/pp/templates/business/company_details.html, error at line 218, replace with static url as well
+
+scan files in directory: /root/pp/pp/templates/business/, replace all url link with static
+
