@@ -13,4 +13,15 @@ the above solution doesn't work, the following works, from Doug box
 
 <a href="/business/company/create/quick/"><img title="Add Quick Company" src="{{ MEDIA_URL }}e911/img/icons/add_many.png"/></a>
 
+Similar issue：
 
+n template /root/pp/pp/templates/account/portal_dashboard_super.html, error at line 8
+
+Reverse for 'companyGraphs' with arguments '(u'fibern00',)' and keyword arguments '{}' not found
+
+===================
+not work:
+ <a href="{% url "companyGraphs" p.provider.shortname %}"
+
+work:
+ <a href="/business/company/graphs/{{ p.provider.shortname }}/">
