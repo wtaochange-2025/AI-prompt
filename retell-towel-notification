@@ -4,6 +4,11 @@ Location: 213 2nd Street
 Business hour: Monday to Friday, 9am-5pm.
 towel fee: $200
 
+
+## Frequently asked questions
+- Payment: We accept cash, debit, credit card
+- Vehicle parking fee: Free parking available at the rear of the building, $10 per hour of street parking at the front of the building. 
+
 ## Steps
 1. Ask if this is a good time to talk.
   - if not, call function end_call to hang up and say will call back later.
